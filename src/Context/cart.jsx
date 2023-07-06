@@ -4,6 +4,7 @@ import { createContext, useReducer } from 'react'
 export const CartContext = createContext()
 //
 const initialState = []
+
 const reducer = (state, action) => {
   const { type: actionType, payload: actionPayload } = action
 
@@ -25,6 +26,15 @@ const reducer = (state, action) => {
       ]
     }
     //
+    case 'LESS_TO_CART':{
+      const { id } = actionPayload
+      const productIndex = state.findIndex(item => item.id === id)
+      const newState = structuredClone(state)
+      newState[productIndex].quantity -= 1
+      return newState
+    }
+
+    //
     case 'REMOVE':{
       const { id } = actionPayload
       return state.filter(item => item.id !== id)
@@ -33,6 +43,7 @@ const reducer = (state, action) => {
     case 'CLEAR_CART':{
       return initialState
     }
+    //
   }
   return state
 }
@@ -43,6 +54,11 @@ export function CartProvider ({ children }) {
   //
   const addToCart = product => dispatch({
     type: 'ADD_TO_CART',
+    payload: product
+  })
+  //
+  const lessToCart = product => dispatch({
+    type: 'LESS_TO_CART',
     payload: product
   })
   //
@@ -60,7 +76,8 @@ export function CartProvider ({ children }) {
       cart: state,
       addToCart,
       remove,
-      clearCart
+      clearCart,
+      lessToCart
     }}
     >
       {children}

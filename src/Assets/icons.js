@@ -1,0 +1,7 @@
+export const addIcon = 'https://i.postimg.cc/sDHDqpYR/add.png'
+export const cartIcon = 'https://i.postimg.cc/fyWyZdDr/cart.png'
+export const moreIcon = 'https://i.postimg.cc/1XRGJL6S/more.png'
+export const lessIcon = 'https://i.postimg.cc/4y8zMBb9/less.png'
+export const closeIcon = 'https://i.postimg.cc/qqL4w832/close.png'
+export const removeIcon = 'https://i.postimg.cc/XvD59v9y/delete.png'
+export const checkIcon = 'https://i.postimg.cc/50Nx99Z6/check.png'

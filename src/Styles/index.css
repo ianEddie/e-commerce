@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /** Aling flex **/
+
 .flexed {
     display: flex;
     justify-content: center;
@@ -12,13 +14,17 @@
 }
 
 @layer base {
+    * {
+        @apply scrollbar scrollbar-track-1 scrollbar-thumb-neutral-400 scrollbar-w-2 scrollbar-thumb-rounded-full 
+    }
+
     .body {
         /*   background-image: url('https://images.unsplash.com/photo-1683896942641-272c57b5a283?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=413&q=80'); */
-        @apply min-h-screen bg-stone-800 flex justify-center items-start flex-wrap bg-fixed font-primary p-3 gap-y-3
+        @apply min-h-screen bg-1 flex justify-center items-start flex-wrap bg-fixed font-primary p-3 gap-y-3
     }
 
     header {
-        @apply bg-sky-300 w-full h-10 flex justify-between items-center px-5 rounded-3xl
+        @apply w-full h-10 flex justify-between items-center px-5 rounded-3xl border border-neutral-500
     }
 
     header div {
@@ -26,7 +32,7 @@
     }
 
     header span {
-        @apply bg-red-300 rounded-full self-start w-6 text-center font-thin
+        @apply bg-red-300 rounded-full self-start w-6 text-center
     }
 
     header h1 {
@@ -44,23 +50,23 @@
     .products {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        @apply gap-3 w-[80%] bg-orange-200/10
+        @apply gap-3 w-[80%]
     }
 
     .filters {
-        @apply bg-lime-700 w-[20%] h-[20rem] flex flex-wrap items-center p-3 rounded-3xl gap-3
+        @apply bg-2 w-[20%] h-[20rem] flex flex-wrap items-center p-3 rounded-3xl gap-3 border border-neutral-500
     }
 
     .min-price {
-        @apply bg-blue-400 w-full flex flex-wrap gap-y-3 text-center rounded-3xl py-3
+        @apply bg-1 w-full flex flex-wrap gap-y-3 text-center rounded-3xl py-3 border border-neutral-500
     }
 
     .category {
-        @apply bg-pink-400 w-full flex justify-around rounded-3xl p-3
+        @apply bg-1 w-full flex justify-around rounded-3xl p-3 gap-x-2 border border-neutral-500
     }
 
     /** Toggle Menu **/
     .open {
-        @apply bg-blue-400 rounded-3xl w-1/4 min-h-[87.5%] absolute flex flex-wrap right-3 top-16 justify-center p-3
+        @apply bg-neutral-800 rounded-3xl w-1/4 h-[87.5%] absolute gap-y-3 right-3 top-16 p-3 overflow-auto flex flex-wrap justify-center shadow-xl shadow-neutral-800
     }
 }
