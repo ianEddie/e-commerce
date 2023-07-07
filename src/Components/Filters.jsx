@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import { useFilters } from '../Hooks/useFilters'
-
+//
 export function Filters () {
   const { filters, setFilters } = useFilters()
   //
@@ -20,10 +20,10 @@ export function Filters () {
       ...prevState,
       category: event.target.value
     }))
-  } //
+  }
+  //
   return (
     <section className='filters'>
-
       <div className='min-price'>
         <label htmlFor='price' className='w-full font-bold text-neutral-800 tracking-wide'>Min price</label>
         <div className='w-full'>

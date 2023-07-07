@@ -44,17 +44,18 @@
     }
 
     main {
-        @apply w-full flex gap-x-3
+        @apply w-full flex flex-wrap gap-3
     }
 
     .products {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        @apply gap-3 w-[80%]
+        @apply gap-3 flex-grow
+
     }
 
     .filters {
-        @apply bg-2 w-[20%] h-[20rem] flex flex-wrap items-center p-3 rounded-3xl gap-3 border border-neutral-500
+        @apply bg-2 sm:w-[20%] w-full  h-[20rem] flex flex-wrap items-center p-3 rounded-3xl gap-3 border border-neutral-500
     }
 
     .min-price {
@@ -62,11 +63,11 @@
     }
 
     .category {
-        @apply bg-1 w-full flex justify-around rounded-3xl p-3 gap-x-2 border border-neutral-500
+        @apply bg-1 w-full flex flex-wrap justify-around rounded-3xl p-3 gap-2 border border-neutral-500
     }
 
     /** Toggle Menu **/
     .open {
-        @apply bg-neutral-800 rounded-3xl w-1/4 h-[87.5%] absolute gap-y-3 right-3 top-16 p-3 overflow-auto flex flex-wrap justify-center shadow-xl shadow-neutral-800
+        @apply bg-neutral-800 rounded-3xl sm:w-1/4 w-[94%] h-[87.5%] absolute gap-y-3 right-3 top-16 p-3 overflow-auto flex flex-wrap justify-center shadow-xl shadow-neutral-800
     }
 }

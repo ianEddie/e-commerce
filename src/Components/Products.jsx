@@ -1,4 +1,3 @@
-
 import { AddIcon, CheckIcon } from '../Assets/icons.jsx'
 import { useCart } from '../Hooks/useCart'
 //
@@ -19,7 +18,7 @@ products.map((product) => {
         <span>{product.title}</span>
         <span>$ {product.price}</span>
       </div>
-      <button onClick={() => addToCart(product)} className=''>
+      <button onClick={() => addToCart(product)}>
         {
           hasProduct
             ? <CheckIcon />
